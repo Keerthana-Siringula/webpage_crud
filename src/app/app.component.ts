@@ -18,6 +18,7 @@ export class AppComponent {
   constructor()
   {
     this.createForm()
+    debugger;
     const oldData = localStorage.getItem("EmpData");
     if(oldData!= null)
     {
@@ -39,6 +40,7 @@ export class AppComponent {
     })
   }
   onSave()
+    debugger;
   {
     const oldData = localStorage.getItem("EmpData");
     if(oldData!= null)
@@ -46,6 +48,8 @@ export class AppComponent {
       const parseData = JSON.parse(oldData);
       this.employeeForm.controls['empid'].setValue(parseData.length+1);
       this.employeeList.unshift(this.employeeForm.value);
+    } else {
+      this.employeeList.unshift(this.employeeForm.value); 
     }
   }
 }
